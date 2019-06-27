@@ -1,0 +1,142 @@
+/*висувне вікно з текстом*/
+.section3,
+.section5 {
+    position: relative;
+}
+
+
+.text-more {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    z-index: 1;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 1.2s;
+    transform: translateX(100%);
+}
+
+.text-more-list {
+    background-color: #fff;
+    margin-left: 61px;
+    height: 100%;
+}
+
+#s3 .text-more-list,
+#s5 .text-more-list {
+    padding: 2rem .5rem 4rem 2.5rem;
+}
+
+
+.info-btn,
+.info-btn2 {
+    width: 35px;
+    height: 35px;
+    background-color: #0f3a4f;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 9999;
+
+}
+
+.info-btn::before,
+.info-btn::after,
+.info-btn2::before,
+.info-btn2::after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: inherit;
+    height: inherit;
+}
+
+.info-btn,
+.info-btn2,
+.info-btn::before,
+.info-btn::after,
+.info-btn2::before,
+.info-btn2::after {
+    border-top-right-radius: 20%;
+}
+
+.info-btn,
+.info-btn2 {
+    transform: rotate(30deg) skewX(-30deg) scale(1, .866);
+}
+
+.info-btn::before,
+.info-btn2::before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+}
+
+.info-btn::after,
+.info-btn2::after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
+
+.info-btn:hover,
+.info-btn2:hover {
+    background-color: #065266;
+    transition: .6s;
+}
+
+.section3,
+.section5 {
+    transform: translateX(0);
+    transition: 1.2s;
+    position: relative;
+    z-index: -1;
+}
+
+
+.section3.active,
+.section5.active {
+    transform: translateX(-70%);
+}
+
+.info-btn.active,
+.info-btn2.active {
+    transform: rotate(-30deg) skewX(-30deg) scale(1, .866);
+    transition: 0.3s;
+}
+
+@media only screen and (max-width:1360px) {
+
+    .text-more {
+        width: 70%;
+    }
+
+    .section3.active,
+    .section5.active {
+        transform: translateX(-70%);
+    }
+
+    #s3 .text-more-list,
+    #s5 .text-more-list {
+        padding: 2rem .5rem 4rem 1.5rem;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .section3.active,
+    .section5.active {
+        transform: translateX(-70%);
+    }
+    .info-btn,
+    .info-btn2 {
+        width: 25px;
+        height: 25px;
+        left: 0;
+    }
+    #s3 .text-more-list,
+    #s5 .text-more-list {
+        padding: 2rem 1.5rem 4rem .5rem;
+    }
+}
+    
+

@@ -1,0 +1,234 @@
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d2537;
+    transition: 0.9s;
+    transform: translateX(-100%);
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    flex-direction: column;
+
+}
+
+.menu-list a {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: .6;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    font-weight: 500;
+    font-kerning: normal;
+    margin-bottom: 2rem;
+}
+
+.menu-list a:hover {
+    color: #fff;
+    opacity: 1;
+    transition: .6s;
+}
+
+.menu-list li {
+    width: auto;
+    list-style-type: none;
+    padding: 1em;
+}
+
+.menu-list a::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    bottom: -5px;
+    right: 0;
+    z-index: 9999;
+}
+
+.menu-list a::after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    bottom: -5px;
+    left: 0;
+    z-index: 9999;
+}
+
+.menu-list li:hover a::after,
+.menu-list li:hover a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: .6;
+    bottom: -5px;
+    z-index: 9999;
+    transition: .6s;
+}
+
+.mobile-toggle {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    position: absolute;
+    right: -110px;
+    top: 30px;
+    z-index: 9999;
+}
+
+.mobile-toggle:hover {
+    background-color: #065266;
+    transition: .6s;
+}
+
+.mobile-toggle:hover span,
+.mobile-toggle:hover span::before,
+.mobile-toggle:hover span::after {
+    background-color: #fff;
+    transition: .01s;
+}
+
+.content {
+    transition: 0.9s;
+    position: relative;
+    z-index: 10;
+}
+
+.content.active {
+    transform: translateX(400px);
+}
+
+.mobile-toggle span,
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 4px;
+    background-color: #222;
+
+}
+
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+    content: '';
+    transition: 0.3s;
+}
+
+.mobile-toggle span::before {
+    transform: translateY(14px);
+}
+
+.mobile-toggle span::after {
+    transform: translateY(-18px);
+}
+
+.mobile-toggle.active span {
+    height: 0;
+}
+
+.mobile-toggle.active span::before {
+    transform: rotate(45deg) translateX(-1px);
+
+}
+
+.mobile-toggle.active span::after {
+    transform: rotate(-45deg) translateY(-2px);
+}
+
+
+@media only screen and (max-width:992px) {
+
+
+    .mobile-toggle {
+        width: 70px;
+        height: 70px;
+        right: -110px;
+        top: 10px;
+    }
+
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+        margin-left: -22px;
+        width: 44px;
+        height: 4px;
+
+    }
+
+    .mobile-toggle span::before {
+        transform: translateY(12px);
+    }
+
+    .mobile-toggle span::after {
+        transform: translateY(-15px);
+    }
+}
+
+
+@media only screen and (max-width:768px) {
+    .menu {
+        width: 300px;
+    }
+
+    .content.active {
+        transform: translateX(300px);
+    }
+
+    .mobile-toggle {
+        width: 60px;
+        height: 60px;
+        right: -68px;
+        top: 6px;
+    }
+
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+        margin-left: -19px;
+        width: 38px;
+        height: 2px;
+
+    }
+
+    .mobile-toggle span::before {
+        transform: translateY(10px);
+    }
+
+    .mobile-toggle span::after {
+        transform: translateY(-12px);
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .menu {
+        width: 250px;
+    }
+
+    .content.active {
+        transform: translateX(250px);
+    }
