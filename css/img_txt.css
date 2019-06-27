@@ -108,12 +108,12 @@
 @media only screen and (max-width:1360px) {
 
     .text-more {
-        width: 70%;
+        width: 85%;
     }
 
     .section3.active,
     .section5.active {
-        transform: translateX(-70%);
+        transform: translateX(-85%);
     }
 
     #s3 .text-more-list,
